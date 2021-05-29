@@ -10,17 +10,17 @@ import org.springframework.stereotype.Service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.pzone.kiran.client.model.Trigger;
-import com.pzone.kiran.client.ws.config.APWsClient;
-import com.pzone.kiran.client.ws.config.APWsClient.MessageHandler;
+import com.pzone.kiran.client.ws.config.ETSWsClient;
+import com.pzone.kiran.client.ws.config.ETSWsClient.MessageHandler;
 
 /**
  * @author Kiran Team
  *
  */
 @Service
-public class APWsClientService {
+public class ETSWsClientService {
 
-  private static final Logger LOG  = LogManager.getLogger(APWsClientService.class);
+  private static final Logger LOG  = LogManager.getLogger(ETSWsClientService.class);
 
   @Value("${server.ws.url}")
   private String              serverUrl;
@@ -28,7 +28,7 @@ public class APWsClientService {
   @Value("${server.ws.token}")
   private String              accessToken;
 
-  private APWsClient          socketClient;
+  private ETSWsClient          socketClient;
 
   private Gson                gson = new GsonBuilder().setPrettyPrinting().setLenient().create();
 
@@ -40,7 +40,7 @@ public class APWsClientService {
     try {
 
       final String wsUrl = serverUrl + accessToken;
-      socketClient = new APWsClient(new URI(wsUrl));
+      socketClient = new ETSWsClient(new URI(wsUrl));
       socketClient.connectToServer();
 
       socketClient.addMessageHandler(new MessageHandler() {

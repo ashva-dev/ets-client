@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.pzone.kiran.client.service.APWsClientService;
+import com.pzone.kiran.client.service.ETSWsClientService;
 
 /**
  * @author Ashva Probs Team
@@ -13,11 +13,11 @@ import com.pzone.kiran.client.service.APWsClientService;
  */
 @SpringBootApplication
 @EnableAutoConfiguration
-public class AshvaProbsClient {
+public class kiranClientApp {
 
   public static void main(String[] args) {
-    final ConfigurableApplicationContext context = SpringApplication.run(AshvaProbsClient.class, args);
-    final APWsClientService apWsClientService = context.getBean(APWsClientService.class);
+    final ConfigurableApplicationContext context = SpringApplication.run(kiranClientApp.class, args);
+    final ETSWsClientService apWsClientService = context.getBean(ETSWsClientService.class);
     apWsClientService.connectToServer();
   }
 }

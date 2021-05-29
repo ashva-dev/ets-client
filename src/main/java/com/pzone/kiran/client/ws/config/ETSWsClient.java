@@ -21,9 +21,9 @@ import org.apache.logging.log4j.Logger;
  *
  */
 @ClientEndpoint
-public class APWsClient {
+public class ETSWsClient {
 
-  private static final Logger LOG                    = LogManager.getLogger(APWsClient.class);
+  private static final Logger LOG                    = LogManager.getLogger(ETSWsClient.class);
 
   private Session             userSession            = null;
   private MessageHandler      messageHandler;
@@ -34,7 +34,7 @@ public class APWsClient {
   private Integer             bufferSize             = (1024 * 1024) * 10;
   private Boolean             showLog                = true;
 
-  public APWsClient(URI endpointURI) {
+  public ETSWsClient(URI endpointURI) {
     this.uri = endpointURI;
     this.container = ContainerProvider.getWebSocketContainer();
     container.setDefaultMaxBinaryMessageBufferSize(bufferSize);

@@ -1,6 +1,6 @@
-# Kiran Websocket Client
+#  Ets Websocket Client
 
-**Kiran Websocket Client** is a java base websocket example on what type of messages application sends over websocket.
+**Ets Websocket Client** is a java base websocket example on what type of messages application sends over websocket.
 
 
 
